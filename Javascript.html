@@ -1,0 +1,47 @@
+<script>
+
+////// Fase 1 //////
+
+let name = ['O','f','3','l','i','a','a'];
+
+name.forEach(element => {
+    document.write(element);
+});
+
+////// Fase 2 //////
+document.write("<br>");
+
+name.forEach(element =>{
+    element = "["+element+"]"; 
+    if ( /[aeiou]/i.test(element) ) {document.write(element, " is vowel, "); return;}
+    if ( /[0-9]/.test(element) ) {document.write(element, " is number, "); return;}
+    if ( /[a-z]/i.test(element) ) {document.write(element, " is consonant, "); return;}
+});
+
+////// Fase 3 //////
+document.write("<br>");
+document.write("Repeated times:");
+
+let dictionary = new Map();
+name.forEach(element => {
+    if(dictionary.has(element)){ dictionary.get(element).times++; }
+    else { dictionary.set(element, {times: 1} ); }
+});
+
+dictionary.forEach(function(value, key) {
+    document.write("[",key, " : ",value.times,"]");
+});
+
+//document.write(" [ ", element, ": ", dictionary.get(element).times, " ] " );
+
+////// Fase 4 //////
+document.write("<br>");
+
+let surname = ['C','o','c','u','c','c','i'];
+let fullName = name.concat(' ', surname);
+
+fullName.forEach(element =>{
+    document.write(element);
+});
+
+</script>
